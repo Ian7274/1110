@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos - Bootstrap</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        }
+        
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        .card-body {
+            padding: 25px;
+            background: white;
+        }
+        
+        .card-title {
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        
+        .card-text {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            min-height: 60px;
+        }
+        
+        .btn-comprar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            width: 100%;
+            font-weight: 600;
+            padding: 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        
+        .btn-comprar:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .btn-comprar:active {
+            transform: scale(0.98);
+        }
+        
+        .container-main {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .card-body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-main px-4">
+        <!-- Cabeçalho da página -->
+        <div class="page-header">
+            <h1>🛍️ Catálogo de Produtos</h1>
+            <p>Conheça nossos produtos de alta qualidade com as melhores tecnologias</p>
+        </div>
+
+        <!-- Container com Row para organizar os cards em grid -->
+        <div class="row g-4">
+            <!-- Card 1: Fone de Ouvido -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <!-- Imagem do produto -->
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop" 
+                         class="card-img-top" alt="Fone de Ouvido Wireless">
+                    
+                    <!-- Corpo do card -->
+                    <div class="card-body">
+                        <!-- Nome do produto -->
+                        <h5 class="card-title">🎧 Fone de Ouvido Wireless</h5>
+                        
+                        <!-- Descrição do produto -->
+                        <p class="card-text">
+                            Fone de ouvido com cancelamento de ruído ativo, bateria de 30 horas e som de alta qualidade estéreo.
+                        </p>
+                        
+                        <!-- Botão Comprar -->
+                        <button class="btn-comprar" onclick="adicionarAoCarrinho('Fone de Ouvido Wireless')">
+                            🛒 Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Smartwatch -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <!-- Imagem do produto -->
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop" 
+                         class="card-img-top" alt="Smartwatch Premium">
+                    
+                    <!-- Corpo do card -->
+                    <div class="card-body">
+                        <!-- Nome do produto -->
+                        <h5 class="card-title">⌚ Smartwatch Premium</h5>
+                        
+                        <!-- Descrição do produto -->
+                        <p class="card-text">
+                            Relógio inteligente com monitoramento de saúde, GPS integrado e tela AMOLED de alta resolução.
+                        </p>
+                        
+                        <!-- Botão Comprar -->
+                        <button class="btn-comprar" onclick="adicionarAoCarrinho('Smartwatch Premium')">
+                            🛒 Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Câmera Digital -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <!-- Imagem do produto -->
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400&h=300&fit=crop" 
+                         class="card-img-top" alt="Câmera Digital 4K">
+                    
+                    <!-- Corpo do card -->
+                    <div class="card-body">
+                        <!-- Nome do produto -->
+                        <h5 class="card-title">📷 Câmera Digital 4K</h5>
+                        
+                        <!-- Descrição do produto -->
+                        <p class="card-text">
+                            Câmera profissional com gravação em 4K, estabilização de imagem avançada e lente grande angular.
+                        </p>
+                        
+                        <!-- Botão Comprar -->
+                        <button class="btn-comprar" onclick="adicionarAoCarrinho('Câmera Digital 4K')">
+                            🛒 Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script para interatividade -->
+    <script>
+        function adicionarAoCarrinho(nomeProduto) {
+            alert(`✅ "${nomeProduto}" foi adicionado ao carrinho com sucesso!`);
+        }
+    </script>
+</body>
+</html>
+
+
